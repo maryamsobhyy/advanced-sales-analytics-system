@@ -1,4 +1,4 @@
-A Laravel-based real-time sales dashboard with AI-powered recommendations and weather-based dynamic pricing. Features live order tracking, instant analytics updates, and intelligent product promotion suggestions.
+# advanced-sales-analytics-systemA Laravel-based real-time sales dashboard with AI-powered recommendations and weather-based dynamic pricing. Features live order tracking, instant analytics updates, and intelligent product promotion suggestions.
 
 Features
 Real-time Order Management - Live order creation and tracking
