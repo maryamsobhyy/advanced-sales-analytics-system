@@ -1,5 +1,16 @@
 # advanced-sales-analytics-systemA Laravel-based real-time sales dashboard with AI-powered recommendations and weather-based dynamic pricing. Features live order tracking, instant analytics updates, and intelligent product promotion suggestions.
 
+GitHub Repository
+
+https://github.com/maryamsobhyy/advanced-sales-analytics-system
+
+manual setup 
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate
+php artisan serve
+
 Features
 Real-time Order Management - Live order creation and tracking
 

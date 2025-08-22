@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  app:
+    image: php:8.3-fpm
+    container_name: sales-app
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+    networks:
+      - sales-net
+    depends_on:
+      - db
+
+  webserver:
+    image: nginx:alpine
+    container_name: sales-web
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/var/www/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - sales-net
+    depends_on:
+      - app
+
+  db:
+    image: mysql:8.0
+    container_name: sales-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: sales
+      MYSQL_USER: user
+      MYSQL_PASSWORD: secret
+    ports:
+      - "3306:3306"
+    networks:
+      - sales-net
+    volumes:
+      - dbdata:/var/lib/mysql
+
+networks:
+  sales-net:
+    driver: bridge
+
+volumes:
+  dbdata:
