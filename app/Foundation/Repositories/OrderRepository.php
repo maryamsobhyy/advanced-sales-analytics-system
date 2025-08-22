@@ -68,7 +68,7 @@ public function getTopProductsBySales(int $limit = 5): Collection
         LIMIT ?
     ", [$limit]);
 
-    // تحويل الـ array إلى Eloquent\Collection
+
     return Product::hydrate($topProducts);
 }
     
